@@ -179,7 +179,7 @@ export function TodoApp() {
             className="h-10 flex-1 bg-card shadow-sm"
             maxLength={201}
           />
-          <Button type="submit" size="lg" className="h-10 shrink-0 px-4" aria-label="新增任務">
+          <Button type="submit" size="lg" className="h-10 shrink-0 px-4" aria-label="送出新增任務">
             <Plus />
             <span className="hidden sm:inline">新增</span>
           </Button>
