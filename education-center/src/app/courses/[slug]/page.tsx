@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Clock, Phone } from "lucide-react";
-import { courses, site } from "@/lib/site";
+import { courses, site, withBasePath } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -43,12 +44,16 @@ export default async function CoursePage({
       <div className="mt-8 overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-slate-100">
         {/* 課程相片 */}
         {course.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={course.image}
-            alt={course.name}
-            className="h-56 w-full object-cover sm:h-72"
-          />
+          <div className="relative h-56 w-full sm:h-72">
+            <Image
+              src={withBasePath(course.image)}
+              alt={course.name}
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+              priority
+            />
+          </div>
         ) : (
           <div
             className={cn(

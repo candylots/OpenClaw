@@ -37,8 +37,21 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Build static export
+      - name: Build static export (root app)
         run: npm run build
+
+      - name: Build education-center site
+        run: |
+          cd education-center
+          npm ci
+          npm run lint
+          npm run build
+
+      - name: Merge education-center into Pages artifact
+        run: |
+          mkdir -p out/education-center
+          cp -r education-center/out/. out/education-center/
+          ls -la out
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

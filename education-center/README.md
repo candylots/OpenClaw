@@ -33,17 +33,19 @@ npx tsc --noEmit
 npm run build    # 輸出到 out/（static export）
 ```
 
-## 待補充素材（TODO）
+## 已放入素材
 
-| 位置 | 素材 | 檔案路徑 |
+| 位置 | 素材 | 說明 |
 |---|---|---|
-| `public/images/logo.png` | ✅ 已放入 | 537×556 透明 PNG |
-| `src/lib/site.ts` → `about.image` | 中心環境相片 | `public/images/about.jpg` |
-| `src/lib/site.ts` → `courses[].image` | 課程相片 | `public/images/courses/<slug>.jpg` |
-| `src/lib/site.ts` → `teachers.principal.image` | 校長相片 | `public/images/teachers/principal.jpg` |
-| `src/lib/site.ts` → `contact` | 真實電話 / WhatsApp / 地址（目前為文件中的範例資料） | 直接改設定檔 |
+| `public/images/logo.png` | ✅ 公司標誌 | 537×556 透明 PNG |
+| `public/images/courses/*.jpg` | ✅ 課程相片 ×4 | 900×599 JPEG（已壓縮） |
 
-放入相片後，在 `src/lib/site.ts` 對應欄位填上路徑即可，元件會自動改用相片（目前顯示漸層 + emoji 佔位）。
+> 課程相片對應：`ai-explorer`、`python-kids`、`primary-boost`、`creative-art`（依傳送順序）
+
+## 待補充素材
+
+- `src/lib/site.ts` → `contact`：真實電話 / WhatsApp / 地址（目前為文件中的範例資料）
+- 如之後要換課程相片，直接覆蓋 `public/images/courses/<slug>.jpg` 即可
 
 ## 部署
 

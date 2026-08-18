@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GraduationCap, Sparkles } from "lucide-react";
-import { site } from "@/lib/site";
+import { site, withBasePath } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -51,7 +51,7 @@ export function Hero() {
           <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-[2rem] bg-gradient-to-br from-indigo-500 to-violet-600 opacity-20 blur-2xl" />
           <div className="flex aspect-square items-center justify-center rounded-[2rem] bg-white/70 p-10 shadow-xl shadow-indigo-900/5 ring-1 ring-white/60 backdrop-blur">
             <Image
-              src={site.logo}
+              src={withBasePath(site.logo)}
               alt={`${site.name} 標誌`}
               width={320}
               height={320}

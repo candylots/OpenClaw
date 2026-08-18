@@ -3,6 +3,17 @@
  * 所有公司資料集中在這裡，改內容只需編輯此檔。
  */
 
+/**
+ * GitHub Pages 子路徑（與 next.config.ts 共用）。
+ * 注意：images.unoptimized 時 next/image 不會自動加 basePath，
+ * 圖片路徑需用 withBasePath() 手動前綴。
+ */
+export const BASE_PATH = "/OpenClaw/education-center";
+
+export function withBasePath(path: string): string {
+  return `${BASE_PATH}${path}`;
+}
+
 export const site = {
   name: "Johnny Education Centre",
   tagline: "讓孩子從小愛上學習，贏在起跑線！",
@@ -32,7 +43,7 @@ export const about = {
     "遊戲化教學，寓學習於娛樂",
     "AI 與數碼工具啟蒙，提升未來競爭力",
   ],
-  // TODO: 之後可放入中心環境相片 public/images/about.jpg
+  // 中心環境相片不需要（使用者決定）
   image: null as string | null,
 };
 
@@ -72,7 +83,7 @@ export type Course = {
   intro: string;
   price: string;
   duration: string;
-  image: string | null; // TODO: 放入課程相片 public/images/courses/<slug>.jpg
+  image: string | null; // 課程相片 public/images/courses/<slug>.jpg
   gradient: string;
   emoji: string;
 };
@@ -86,7 +97,7 @@ export const courses: Course[] = [
       "透過簡單有趣的例子，讓孩子認識人工智能，學習如何用 AI 工具幫助學習及創作，例如生成故事、圖片等。",
     price: "HKD 1,100",
     duration: "4 堂",
-    image: null,
+    image: "/images/courses/ai-explorer.jpg",
     gradient: "from-violet-500 to-fuchsia-500",
     emoji: "🤖",
   },
@@ -98,7 +109,7 @@ export const courses: Course[] = [
       "以遊戲及圖像方式教授編程概念，培養邏輯思維與解難能力，適合零基礎小朋友。",
     price: "HKD 1,300",
     duration: "4 堂",
-    image: null,
+    image: "/images/courses/python-kids.jpg",
     gradient: "from-sky-500 to-indigo-500",
     emoji: "🐍",
   },
@@ -110,7 +121,7 @@ export const courses: Course[] = [
       "針對中文、英文及數學基礎，透過練習與講解，幫助學生打好基礎及提升成績。",
     price: "HKD 900",
     duration: "4 堂",
-    image: null,
+    image: "/images/courses/primary-boost.jpg",
     gradient: "from-emerald-500 to-teal-500",
     emoji: "📚",
   },
@@ -122,7 +133,7 @@ export const courses: Course[] = [
       "讓孩子拾起畫筆，創作圖畫、簡報及小故事，提升創意與表達能力。",
     price: "HKD 1,200",
     duration: "4 堂",
-    image: null,
+    image: "/images/courses/creative-art.jpg",
     gradient: "from-amber-500 to-orange-500",
     emoji: "🎨",
   },
@@ -138,7 +149,7 @@ export const teachers = {
     role: "校長",
     badge: "Microsoft & Google Educator",
     bio: "擁有多年 IT 教學及培訓經驗，專注將複雜科技轉化為小朋友都能理解的學習內容。擅長以互動及遊戲方式教學，讓孩子在開心中學習，建立自信與成就感。",
-    // TODO: 放入校長相片 public/images/teachers/principal.jpg
+    // 校長相片不需要（使用者決定）
     image: null as string | null,
   },
 };

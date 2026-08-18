@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { nav, site } from "@/lib/site";
+import { nav, site, withBasePath } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <div className="flex items-center gap-2.5">
               <Image
-                src={site.logo}
+                src={withBasePath(site.logo)}
                 alt={`${site.name} 標誌`}
                 width={36}
                 height={36}

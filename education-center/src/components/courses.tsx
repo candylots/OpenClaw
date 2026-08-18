@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
-import { courses } from "@/lib/site";
+import { courses, withBasePath } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Courses() {
@@ -21,12 +22,15 @@ export function Courses() {
             >
               {/* 課程相片：有相片用相片，否則用漸層佔位 */}
               {course.image ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={course.image}
-                  alt={course.name}
-                  className="h-40 w-full object-cover"
-                />
+                <div className="relative h-40 w-full">
+                  <Image
+                    src={withBasePath(course.image)}
+                    alt={course.name}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
               ) : (
                 <div
                   className={cn(

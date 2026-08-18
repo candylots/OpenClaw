@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { nav, site } from "@/lib/site";
+import { nav, site, withBasePath } from "@/lib/site";
 
 export function Navbar() {
   return (
@@ -8,7 +8,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5">
           <Image
-            src={site.logo}
+            src={withBasePath(site.logo)}
             alt={`${site.name} 標誌`}
             width={40}
             height={40}
