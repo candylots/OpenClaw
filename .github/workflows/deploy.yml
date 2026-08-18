@@ -42,6 +42,10 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          # Enable the Pages site (build type: GitHub Actions) using
+          # the workflow's GITHUB_TOKEN, so no PAT is needed.
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
