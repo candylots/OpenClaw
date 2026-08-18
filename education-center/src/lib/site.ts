@@ -83,6 +83,10 @@ export type Course = {
   intro: string;
   price: string;
   duration: string;
+  age: string;
+  classLength: string;
+  syllabus: string[];
+  features: string[];
   image: string | null; // 課程相片 public/images/courses/<slug>.jpg
   gradient: string;
   emoji: string;
@@ -97,6 +101,21 @@ export const courses: Course[] = [
       "透過簡單有趣的例子，讓孩子認識人工智能，學習如何用 AI 工具幫助學習及創作，例如生成故事、圖片等。",
     price: "HKD 1,100",
     duration: "4 堂",
+    age: "5 – 9 歲",
+    classLength: "每堂 60 分鐘",
+    syllabus: [
+      "什麼是人工智能？認識生活中嘅 AI",
+      "同 AI 傾偈：學識提問同指令",
+      "用 AI 生成小故事，發揮創意",
+      "用 AI 畫圖，做出自己嘅作品",
+      "小小 AI 作品展：同家長分享",
+    ],
+    features: [
+      "零基礎都學得識",
+      "小班教學 1:6",
+      "每人一部平板實作",
+      "作品帶返屋企",
+    ],
     image: "/images/courses/ai-explorer.jpg",
     gradient: "from-violet-500 to-fuchsia-500",
     emoji: "🤖",
@@ -109,6 +128,21 @@ export const courses: Course[] = [
       "以遊戲及圖像方式教授編程概念，培養邏輯思維與解難能力，適合零基礎小朋友。",
     price: "HKD 1,300",
     duration: "4 堂",
+    age: "7 – 9 歲",
+    classLength: "每堂 60 分鐘",
+    syllabus: [
+      "程式係咩？認識電腦嘅指令",
+      "圖像化編程入門：拖拉積木學邏輯",
+      "Python 基礎：變數同輸出",
+      "條件同迴圈：整小動畫",
+      "小遊戲專案：自己整第一個 Game",
+    ],
+    features: [
+      "零編程基礎可參加",
+      "遊戲式教學唔悶場",
+      "小班教學 1:6",
+      "訓練邏輯思維同解難力",
+    ],
     image: "/images/courses/python-kids.jpg",
     gradient: "from-sky-500 to-indigo-500",
     emoji: "🐍",
@@ -121,6 +155,21 @@ export const courses: Course[] = [
       "針對中文、英文及數學基礎，透過練習與講解，幫助學生打好基礎及提升成績。",
     price: "HKD 900",
     duration: "4 堂",
+    age: "5 – 9 歲（小學）",
+    classLength: "每堂 90 分鐘",
+    syllabus: [
+      "中文：認字、閱讀理解基礎",
+      "英文：拼音、常用詞彙同句子",
+      "數學：加減乘除基礎鞏固",
+      "功課輔導：解難題唔再怕",
+      "每週小測驗：睇住小朋友進步",
+    ],
+    features: [
+      "中英數全面鞏固",
+      "按程度分組教學",
+      "每堂跟進功課",
+      "定期進度報告",
+    ],
     image: "/images/courses/primary-boost.jpg",
     gradient: "from-emerald-500 to-teal-500",
     emoji: "📚",
@@ -133,6 +182,21 @@ export const courses: Course[] = [
       "讓孩子拾起畫筆，創作圖畫、簡報及小故事，提升創意與表達能力。",
     price: "HKD 1,200",
     duration: "4 堂",
+    age: "5 – 9 歲",
+    classLength: "每堂 60 分鐘",
+    syllabus: [
+      "色彩同線條大探索",
+      "主題繪畫：動物大集合",
+      "整自己嘅小故事書",
+      "學做簡報：畫出嚟講出嚟",
+      "小小畫展：作品分享日",
+    ],
+    features: [
+      "畫具全包，唔使自備",
+      "故事+繪畫結合訓練表達",
+      "小班教學 1:6",
+      "每月作品展俾家長欣賞",
+    ],
     image: "/images/courses/creative-art.jpg",
     gradient: "from-amber-500 to-orange-500",
     emoji: "🎨",
@@ -166,4 +230,5 @@ export const nav = [
   { label: "精選課程", href: "#courses" },
   { label: "師資介紹", href: "#teachers" },
   { label: "聯絡我們", href: "#contact" },
+  { label: "學習遊戲", href: "/game" },
 ];
