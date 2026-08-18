@@ -15,6 +15,9 @@ const STORAGE_KEY = "openclaw-todo:todos:v1";
 let cache: Todo[] | null = null;
 const listeners = new Set<() => void>();
 
+/** Stable empty snapshot for SSR — must be referentially stable. */
+const EMPTY_TODOS: Todo[] = [];
+
 function read(): Todo[] {
   if (cache) return cache;
   if (typeof window === "undefined") return [];
@@ -36,9 +39,9 @@ export function getTodos(): Todo[] {
   return read();
 }
 
-/** Server snapshot used during SSR / hydration. */
+/** Server snapshot used during SSR / hydration. Referentially stable. */
 export function getServerTodos(): Todo[] {
-  return [];
+  return EMPTY_TODOS;
 }
 
 export function setTodos(todos: Todo[]): void {
